@@ -1,41 +1,79 @@
-### Steps to run the project:
+# User CRUD APP
 
-1. Run `npm i` command
-2. Setup `.env` settings like `.env.example` file
-3. Run `docker compose up` for run the postgres database
-3. Run `npm run dev` command for start the app
+A user RESTful CRUD application built with Node.js, TypeScript, and PostgreSQL.
 
-### API
 
-**Admin user:**
+## Description
 
->     - email: superuser@test.io
->     - password: superpassword
+This project is a user RESTful CRUD application implemented with Node.js, TypeScript, and PostgreSQL. It allows users to perform CRUD operations on user data, including creating, reading, updating, and deleting user information.
 
+## Installation
+
+To run the application locally, follow these steps:
+
+1. Clone the repository:
+   
+   ```sh
+   git clone https://github.com/kycetin/nodejs-typescript-postgres.git
+   cd nodejs-typescript-postgres
+   ```
+   
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+   
+
+## Configuration
+
+1. Set up environment variables:
+   - Create a `.env` file in the project root directory.
+   - Use the `.env.example` file as a reference to set the required configuration values (e.g., database connection settings).
+
+## Usage
+
+To start the application, run the following command:
+
+```sh
+npm run dev
 ```
-POST /api/login
+
+
+The server will start, and you can access the application at `http://localhost:your-port`.
+
+## API Endpoints
+
+The API provides the following endpoints for user management:
+
+- *POST /api/login*
   - Login User
-POST /api/users
+
+- *POST /api/users*
   - Create User
-GET /api/users
+
+- *GET /api/users*
   - List Users
-GET /api/user/:id
+
+- *GET /api/user/:id*
   - Get User Detail
-PATCH /api/user/:id
+
+- *PATCH /api/user/:id*
   - Update User
-DELETE /api/user/:id
+
+- *DELETE /api/user/:id*
   - Delete User
-``` 
 
-### Swagger
+## Swagger Documentation
 
-Swagger documentation is available after run the project.
+The API documentation is available via Swagger. After running the project, access the documentation at the following URL:
 
 ```
-localhost:${port}/docs
+http://localhost:your-port/docs
 ```
 
 
-### Postman Collection
+## Postman Collection
 
-`Nodejs App.postman_collection.json` file can be use for the API testing.
+For API testing, a Postman collection file named `Nodejs_App.postman_collection.json` is provided. Import this file into Postman to interact with the API.
