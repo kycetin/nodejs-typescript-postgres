@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { User } from "../entity/User"
 import { AppDataSource } from "../data-source"
-import  jwt from "jsonwebtoken";
+import jwt, { Secret } from 'jsonwebtoken';
 
 import bcrypt from 'bcrypt';
 
@@ -17,7 +17,7 @@ const login = async (req: Request, res: Response) => {
       // Create token
       const token = jwt.sign(
         { user_id: user.id, email },
-        process.env.SECRET_KEY,
+        process.env.SECRET_KEY as Secret,
         {
           expiresIn: "2h",
         }
